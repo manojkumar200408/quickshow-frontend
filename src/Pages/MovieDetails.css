@@ -1,0 +1,233 @@
+.details-wrapper {
+  display: flex;
+  gap: 60px;
+  padding: 80px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #0b0f1a, #1a0d12);
+  color: white;
+}
+
+.poster-section img {
+  width: 350px;
+  border-radius: 16px;
+}
+
+.info-section {
+  max-width: 600px;
+}
+
+.language {
+  color: #ff2e63;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: #ff4d6d;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #aaa;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.meta {
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.btn-group {
+  display: flex;
+  gap: 20px;
+}
+
+.trailer-btn {
+  padding: 12px 25px;
+  background: #1c2230;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.buy-btn {
+  padding: 12px 30px;
+  background: #ff2e63;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.heart-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+.heart-btn.active {
+  color: #ff2e63;
+}
+.movie-details-page {
+  padding: 50px;
+  background: #0C0C0F;
+  color: white;
+}
+
+/* TOP */
+.top-section {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 15px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.buy-btn {
+  background: #ff2d55;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: white;
+}
+
+/* CAST */
+.cast-section {
+  margin-bottom: 60px;
+}
+
+.cast-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.cast-card {
+  text-align: center;
+}
+
+.cast-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* DATE */
+.date-section {
+  background: linear-gradient(135deg,#2a0d15,#0b0f1a);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.date-buttons {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.date-buttons button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid red;
+  background: transparent;
+  color: white;
+}
+
+.date-buttons .active {
+  background: red;
+}
+
+.book-now {
+  padding: 10px 30px;
+  background: #ff2d55;
+  border: none;
+  border-radius: 30px;
+  color: white;
+}
+.related-section {
+  margin-top: 60px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.related-card {
+  background: #1b2232;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+}
+
+.related-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-bottom button {
+  background: #ff2d55;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+@media(max-width: 900px){
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+.fav-btn {
+  background: #ff2e63;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.05);
+}

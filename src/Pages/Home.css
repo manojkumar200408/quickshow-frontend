@@ -1,0 +1,287 @@
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+
+.overlay {
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.overlay h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+.explore-btn {
+  width: 200px;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.explore-btn:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+.home-movies {
+  padding: 60px 80px;
+  background: #000;
+}
+
+.home-movies h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 80px;
+}
+
+.movie-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h4 {
+  margin-bottom: 10px;
+}
+
+.wide-movie-card:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+.movie-info p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+.wide-bottom {
+  display: flex;
+  justify-content: space-between;  /* left & right */
+  align-items: center;
+}
+.buy-btn {
+  background: #e50914;
+  border: none;
+  padding: 6px 14px;   /* 🔥 smaller */
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  width: auto;
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+.rating {
+  color: #f5c518;   /* gold star color */
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.star {
+  color: #f5c518;
+  font-size: 18px;
+}
+.movie-name{
+  color: #ffffff;
+  margin-left: 50px;
+  /* margin-bottom: -70px; */
+}
+.out {
+  color: gray;
+  font-size: 13px;
+}
+.wide-movie-card {
+  background: #1e2a3a;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.wide-movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.wide-content {
+  padding: 25px;
+}
+
+.wide-content h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.wide-meta {
+  color: #9fa6b2;
+  margin-bottom: 15px;
+}
+
+.wide-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  color: #665e5f;
+  font-weight: bold;
+  /* font-size: 14px; */
+}
+.main-trailer {
+  padding: 60px 80px;
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.trailer-thumbnails {
+  display: flex;
+  gap: 20px;
+}
+
+.trailer-thumbnails img {
+ width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  object-fit: cover;
+}
+
+.trailer-thumbnails img:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+
+  .hero-section {
+    height: 80vh;
+    padding: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 28px;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .video-wrapper {
+    height: 250px;
+  }
+
+  .trailer-thumbnails {
+    overflow-x: auto;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero {
+    height: 75vh;
+    padding: 20px;
+  }
+
+  .overlay h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .overlay p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .explore-btn {
+    width: 160px;
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .wide-movie-card img {
+    height: 220px;
+  }
+
+  .wide-content {
+    padding: 15px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .video-wrapper {
+    height: 220px;
+  }
+
+  .trailer-thumbnails {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .trailer-thumbnails img {
+    width: 180px;
+    height: 100px;
+  }
+
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import API from "../api";
 // import Footer from "../Components/Footer";
 function Home() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ function Home() {
  useEffect(() => {
   const fetchMovies = async () => {
     try {
-      const res = await axios.get("http://localhost:7000/api/movies");
+      const res = await axios.get("https://quickshow-backend-kzqj.onrender.com/api/movies");
       setMovies(res.data);
     } catch (error) {
       console.log(error);
@@ -19,7 +20,18 @@ function Home() {
   };
 
   fetchMovies();
-}, []);
+}, []); useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const { data } = await API.get("/api/movies");
+        setMovies(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchMovies();
+  }, []);
 
   const featuredMovies = [
     {

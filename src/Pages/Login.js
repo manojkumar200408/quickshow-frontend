@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../api";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,37 +10,26 @@ function Login() {
   const navigate = useNavigate();
   const [showOtp, setShowOtp] = useState(false);
 
- const sendOtp = async () => {
-  try {
-    await axios.post("http://localhost:7000/api/auth/send-otp", {
-      email,
-    });
+  const sendOtp = async () => {
+    try {
+      await API.post("/send-otp", { email });
+      alert("OTP Sent");
+      setStep(2);
+    } catch (error) {
+      alert("Error sending OTP");
+    }
+  };
 
-    alert("OTP sent to your email");
-    setShowOtp(true);   // 🔥 THIS IS IMPORTANT
-
-  } catch (err) {
-    alert("Error sending OTP");
-  }
-};
-
-const verifyOtp = async () => {
-  try {
-    await axios.post("http://localhost:7000/api/auth/verify-otp", {
-      email,
-      otp,
-    });
-
-    // 🔥 Save login status
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("userEmail", email);
-
-    window.location.href = "/Home";  
-
-  } catch (err) {
-    alert("Invalid OTP");
-  }
-};
+  const verifyOtp = async () => {
+    try {
+      await API.post("/verify-otp", { email, otp });
+      localStorage.setItem("user", JSON.stringify({ email }));
+      navigate("/");
+      window.location.reload();
+    } catch (error) {
+      alert("Invalid OTP");
+    }
+  };
 
   return (
     <div style={{ textAlign: "center", marginTop: "100px" }}>

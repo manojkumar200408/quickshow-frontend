@@ -2,6 +2,7 @@ import { useState ,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./SeatBooking.css";
+import API from "../api";
 
 function SeatBooking() {
   const { id, date } = useParams();
@@ -71,8 +72,7 @@ console.log(id);
         0
       );
 
-      await axios.post(
-        "http://localhost:7000/api/bookings",
+      API.post("/api/book-seat",
         {
           movieId: id,
           date,

@@ -10,15 +10,20 @@ function Login() {
   const navigate = useNavigate();
   const [showOtp, setShowOtp] = useState(false);
 
-  const sendOtp = async () => {
-    try {
-      await API.post("/send-otp", { email });
-      alert("OTP Sent");
-      setStep(2);
-    } catch (error) {
-      alert("Error sending OTP");
-    }
-  };
+ const sendOtp = async () => {
+  try {
+    await axios.post(
+      "https://quickshow-backend-kzqj.onrender.com/send-otp",
+      { email }
+    );
+
+    setShowOtp(true);
+
+  } catch (err) {
+    console.log(err);
+    alert("OTP Failed");
+  }
+};
 
   const verifyOtp = async () => {
     try {
